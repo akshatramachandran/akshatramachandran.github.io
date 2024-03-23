@@ -8,6 +8,10 @@ a {
   width: 220px; /* This ensures the width adjusts to maintain the aspect ratio */
 }
 
+.news-section {
+  background: none;
+}
+
 .justified {
   text-align: justify;
   /* Optional: To handle the last line alignment in justified text */
