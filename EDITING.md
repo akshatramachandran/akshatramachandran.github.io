@@ -46,10 +46,6 @@ keywords: [
 ]
 ```
 
-### Add a gallery image
-
-Put the image in `images/`, then add an entry to `beyond.gallery`. Set `large: true` only for the lead image.
-
 ### Change contact details or availability
 
 Edit `identity`. The header, hiring link, email links, résumé link, portrait caption, and footer all reuse those values.
@@ -60,9 +56,9 @@ The `identity.links` object is the single source for LinkedIn, GitHub, and Googl
 
 Edit `metadata`. It controls the browser title, search description, and social sharing information.
 
-### Change the live agent trace
+### Change the chip journey
 
-Edit the `title` and `detail` values inside `journey`. The technical camera path is isolated in `js/chip-config.js`.
+Edit the stage names inside `journey`. The technical camera path is isolated in `js/chip-config.js`.
 
 ## File responsibilities
 
