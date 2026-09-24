@@ -417,6 +417,8 @@ body.link-hover .cursor-dot { width: 34px; height: 34px; background: var(--sage)
   .site-header nav { display: none; }
   .site-header { grid-template-columns: 1fr auto; }
   .header-actions { grid-column: 2; }
+  .community-service { grid-template-columns: minmax(0, 1fr) auto; gap: .8rem 1rem; }
+  .community-service p { grid-column: 1 / -1; grid-row: 2; }
   .news-grid { grid-template-columns: 1fr; }
   .award-orbit { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
