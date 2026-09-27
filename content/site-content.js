@@ -193,7 +193,7 @@ export const siteContent = {
         imageAlt: 'Logarithmic posit format and accelerator diagram', accent: '#9a8d6d'
       },
       {
-        title: 'Polestar', year: 2026, venue: 'ICLR Workshop 2026', category: 'Under review', metaLayout: 'stacked',
+        title: 'Polestar', year: 2026, venue: 'NeurIPS · 2026', category: 'Accepted', metaLayout: 'stacked',
         subtitle: 'Polestar: Drift-Aware Cache Calibration and Token Commitment for Efficient Inference of Diffusion LLMs',
         description: 'Polestar uses token-representation drift as one signal for two inference decisions: selectively refresh stale KV-cache positions and commit tokens ready to stop changing. The joint cache-and-decoding policy improves the accuracy–throughput trade-off in diffusion LLMs.',
         url: 'https://openreview.net/forum?id=e3ITaLZ4ct', image: 'images/publications/polestar-paper-figure.png',
