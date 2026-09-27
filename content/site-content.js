@@ -226,6 +226,7 @@ export const siteContent = {
     items: [
       { date: 'May 2026', type: 'Career', textHtml: 'Returned to <strong>NVIDIA Research</strong> to continue mixed-precision accelerator research.' },
       { date: '2026', type: 'Honor', textHtml: 'Named an <strong>MLCommons Rising Star</strong> in machine learning and systems research.' },
+      { date: '2026', type: 'Service', textHtml: 'Served as submission co-chair for <a href="https://microarch.org/micro59/" target="_blank" rel="noopener noreferrer"><strong>MICRO 2026</strong></a>.' },
       { date: 'Mar 2026', type: 'Milestone', textHtml: 'Defended Ph.D. proposal on adaptable sparsity and quantization for efficient foundation-model computing.' },
       { date: 'Mar 2026', type: 'Paper', textHtml: 'Polestar-Cache published at the Latent & Implicit Thinking Workshop at ICLR.' },
       { date: 'Mar 2026', type: 'Talk', textHtml: 'Presented “Outlier-Aware Quantization” at Stanford’s Tambe Lab.' },
