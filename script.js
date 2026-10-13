@@ -1,5 +1,5 @@
-import { siteContent } from './content/site-content.js?v=20261012-01';
-import { renderSite } from './js/components.js?v=20261012-01';
+import { siteContent } from './content/site-content.js?v=20260923-27';
+import { renderSite } from './js/components.js?v=20260923-27';
 import { chipCamera } from './js/chip-config.js?v=20260923-22';
 
 renderSite(siteContent);
