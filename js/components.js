@@ -92,6 +92,7 @@ function renderAbout(content) {
         <div class="body-copy reveal">
           ${about.paragraphsHtml.map((paragraph) => `<p>${paragraph}</p>`).join('')}
           <div class="about-details">
+            <section class="about-detail education"><h3>Education</h3>${about.education.map((item) => `<article class="education-item"><h4>${item.degree}</h4><p>${item.institution}<br><span>${item.dates}</span></p><p>${item.detail}</p></article>`).join('')}</section>
             <section class="about-detail"><h3>Interests</h3><ul>${about.interests.map((item) => `<li>${item}</li>`).join('')}</ul></section>
             <section class="about-detail"><h3>Languages &amp; tools</h3><ul>${about.tools.map((item) => `<li>${item}</li>`).join('')}</ul></section>
           </div>
@@ -115,6 +116,10 @@ function renderResearch(content) {
             ${renderPaperKeywords(area.keywords, content.publications, `research-${index}`)}
           </article>`).join('')}
       </div>
+      <div class="section-heading reveal"><h3 class="projects-heading">Selected projects &amp; tapeouts</h3></div>
+      <div class="domain-list project-list">
+        ${section.projects.map((project, index) => `<article class="domain reveal"><span class="domain-number">${number(index)}</span><h3>${project.title}</h3><div class="project-copy"><span class="project-status">${project.status}</span><p>${project.description}</p></div></article>`).join('')}
+      </div>
     </section>`;
 }
 
@@ -131,11 +136,12 @@ function renderExperience(content) {
             <div class="timeline-copy">
               <h3>${item.company}</h3>
               <p class="timeline-role">${item.role}</p>
+              <p class="timeline-dates">${item.dates}</p>
             </div>
             <span class="timeline-place">${item.location}</span>
             <span class="timeline-mark">${item.mark}</span>
             <p class="timeline-summary">${item.summary}</p>
-            <div class="timeline-keywords">${renderPaperKeywords(item.keywords, content.publications, `experience-${index}`)}</div>
+            ${item.keywords.length ? `<div class="timeline-keywords">${renderPaperKeywords(item.keywords, content.publications, `experience-${index}`)}</div>` : ''}
           </article>`).join('')}
       </div>
     </section>`;

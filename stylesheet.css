@@ -244,6 +244,13 @@ main { position: relative; z-index: 2; }
 .about-detail h3 { margin: 0 0 .7rem; color: var(--clay); font: 500 .64rem/1.3 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
 .about-detail ul { display: flex; flex-wrap: wrap; gap: .45rem; margin: 0; padding: 0; list-style: none; }
 .about-detail li { padding: .36rem .56rem; border: 1px solid var(--rule); border-radius: 99px; color: var(--ink-soft); font-size: .78rem; line-height: 1.3; }
+.education-item + .education-item { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+.education-item h4 { margin: 0 0 .35rem; font: 500 1.2rem/1.3 var(--serif); }
+.education-item p { margin: .35rem 0; font-size: .86rem; line-height: 1.5; }
+.education-item span { color: var(--ink-soft); }
+.projects-heading { margin: 0; font: 400 clamp(2rem, 4vw, 3.5rem)/1.1 var(--serif); }
+.project-list h3 { font-size: clamp(1.8rem, 3vw, 2.7rem); line-height: 1.1; }
+.project-status { display: block; margin-bottom: .8rem; color: var(--clay); font: 500 .68rem/1.5 var(--mono); }
 .portrait-window { width: min(100%, 270px); margin: 0; }
 .portrait-window img { aspect-ratio: 4/5; object-fit: cover; object-position: center 20%; }
 .portrait-window span { display: block; margin-top: .6rem; font: .55rem/1 var(--mono); letter-spacing: .1em; }
@@ -278,6 +285,7 @@ main { position: relative; z-index: 2; }
 .timeline-year, .timeline-place { font: 600 .74rem/1.4 var(--mono); letter-spacing: .06em; }
 .timeline-row h3 { margin: 0 0 .3rem; font: 500 clamp(1.7rem, 3vw, 3rem)/1 var(--serif); }
 .timeline-row p { margin: 0; color: var(--ink-soft); font-size: clamp(.98rem, .2vw + .94rem, 1.08rem); font-weight: 500; line-height: 1.5; }
+.timeline-row .timeline-dates { margin-top: .5rem; color: var(--clay); font: 500 .68rem/1.5 var(--mono); }
 .timeline-row .timeline-summary { grid-column: 1 / -1; margin: .35rem 0 0; padding-top: .85rem; border-top: 1px solid var(--rule); color: var(--ink-soft); font-size: clamp(.98rem, .16vw + .94rem, 1.04rem); font-weight: 400; line-height: 1.55; }
 .timeline-keywords { grid-column: 1 / -1; }
 .timeline-keywords .paper-keywords { margin-top: 0; }
@@ -454,6 +462,7 @@ body.link-hover .cursor-dot { width: 34px; height: 34px; background: var(--sage)
   .domain-list, .timeline { margin-left: 0; }
   .domain { grid-template-columns: 45px 1fr; gap: 1rem; }
   .domain p, .tag-row, .domain > .paper-keywords { grid-column: 2; }
+  .project-copy { grid-column: 2; }
   .timeline-row { grid-template-columns: 64px 1fr 40px; gap: .8rem; }
   .timeline-place { display: none; }
   .timeline-mark { width: 38px; height: 38px; }

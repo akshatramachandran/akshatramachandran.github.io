@@ -19,7 +19,7 @@ export const siteContent = {
     status: 'Researching at Georgia Tech',
     email: 'akshat.r@gatech.edu',
     cv: 'data/Akshat_Ramachandran_CV.pdf',
-    availability: 'Summer 2027',
+    availability: 'May 2027',
     availabilityLabel: 'Open for full-time roles',
     copyrightYear: '2026',
     links: {
@@ -40,7 +40,7 @@ export const siteContent = {
     { label: 'LinkedIn', icon: 'linkedin', hrefKey: 'linkedin' },
     { label: 'GitHub', icon: 'github', hrefKey: 'github' },
     { label: 'Email', ariaLabel: 'Email Akshat', icon: 'email', hrefKey: 'email' },
-    { label: 'Résumé', ariaLabel: 'View curriculum vitae', icon: 'document', hrefKey: 'cv' }
+    { label: 'CV', ariaLabel: 'View curriculum vitae', icon: 'document', hrefKey: 'cv' }
   ],
 
   hero: {
@@ -52,8 +52,8 @@ export const siteContent = {
     portrait: 'images/portfolio-portrait.png',
     portraitAlt: 'Portrait of Akshat Ramachandran',
     paragraphsHtml: [
-      'I am a Ph.D. candidate in Electrical and Computer Engineering at the <a href="https://synergy.ece.gatech.edu">Synergy Lab</a>, Georgia Tech, advised by <a href="https://tusharkrishna.ece.gatech.edu">Prof. Tushar Krishna</a>. I am in my <strong><u>fourth and final year</u></strong>. My thesis explores algorithm-hardware co-design for efficient foundation-model computing.',
-      'Across a continuum from static, model-centric compression to dynamic, token-centric inference, my core research focuses on designing adaptive numerics (quantization) and sparsity techniques preserve accuracy while improving memory scalability,real-time performance, energy, and reducing silicon footprint.'
+      'I am a Ph.D. candidate in Electrical and Computer Engineering at the <a href="https://synergy.ece.gatech.edu">Synergy Lab</a>, Georgia Tech, advised by <a href="https://tusharkrishna.ece.gatech.edu">Prof. Tushar Krishna</a>. I am in my <strong>fourth and final year</strong>, with expected graduation in <strong>May 2027</strong>. My thesis explores algorithm-hardware co-design for efficient foundation-model computing through adaptable sparsity and quantization.',
+      'Across a continuum from static, model-centric compression to dynamic, token-centric and agentic inference, I design adaptive numerics and sparsity techniques that preserve accuracy while improving memory scalability, latency, and energy efficiency. My work spans runtime-adaptive precision, efficient reasoning and diffusion models, and specialized accelerator architectures.'
     ],
     interests: [
       'Computer architecture',
@@ -72,7 +72,15 @@ export const siteContent = {
       'HLS (Vivado, Catapult)',
       'CUDA',
       'Triton',
-      'PyTorch'
+      'PyTorch',
+      'Keras',
+      'Synopsys Design Compiler',
+      'Innovus'
+    ],
+    education: [
+      { degree: 'Ph.D. · Electrical and Computer Engineering', institution: 'Georgia Institute of Technology', dates: '2023–2027 · Expected May 2027', detail: 'GPA 4.0/4.0 · Finance minor, Scheller College of Business' },
+      { degree: 'M.S. (Thesis) · Electrical and Computer Engineering', institution: 'Georgia Institute of Technology', dates: '2023–2025', detail: 'GPA 4.0/4.0 · Flexible and temporal N:M sparsity for digital compute-in-memory' },
+      { degree: 'B.Tech. · Electronics Engineering', institution: 'VJTI, Mumbai', dates: '2018–2022', detail: 'GPA 9.80/10.0 · Department rank 1/83, Gold Medalist · Institute rank 2/480' }
     ]
   },
 
@@ -81,7 +89,7 @@ export const siteContent = {
     areas: [
       {
         title: 'Adaptive algorithms',
-        description: 'Sparsity and quantization techniques that adapt to heterogeneous layers, experts, token and prompt complexity instead of imposing one precision everywhere.',
+        description: 'Sparsity and quantization techniques that adapt to layers, tokens, prompts, and agentic workloads. Runtime-adaptive precision adjusts weights, activations, and KV caches as inference demands change.',
         keywords: [
           { label: 'Quantization', papers: ['OuroMamba', 'MicroScopiQ', 'CLAMP-ViT', 'Logarithmic Posits'] },
           { label: 'Sparsity', papers: ['FLOW + FlexCiM', 'RECAP'] },
@@ -89,8 +97,8 @@ export const siteContent = {
         ]
       },
       {
-        title: 'System kernel',
-        description: 'Low-precision attention kernels, precision-aware paged KV-cache memory management. Runtime mechanisms that turn compression ideas into practical end-to-end inference speedups.',
+        title: 'Runtime systems & kernels',
+        description: 'Low-precision attention kernels, precision-aware paged KV-cache management, and LLM serving across heterogeneous GPUs and TPUs. Runtime mechanisms turn compression into practical inference speedups under cost and latency constraints.',
         keywords: [
           { label: 'Efficient kernels', papers: ['ThinKV', 'OuroMamba'] },
           { label: 'KV cache optimization', papers: ['ThinKV', 'Polestar'] },
@@ -105,6 +113,11 @@ export const siteContent = {
           { label: 'Design space exploration', papers: ['AIrchitect v2', 'OneDSE'] }
         ]
       }
+    ],
+    projects: [
+      { title: 'Unified prefill–decode chip', status: 'In progress · Samsung 14 nm FinFET', description: 'Designing a unified digital compute-in-memory and dot product unit with shared SRAM for LLM prefill–decode disaggregation on a single chip, spanning algorithm design through GDS.' },
+      { title: 'Mixed-precision multi-agent systems', status: 'In progress', description: 'Developing a hierarchical multi-agent runtime that uses task dependencies, handoff requirements, and confidence to select sub-LLM precision under resource budgets. The precision policy targets unnecessary and incorrect tool calls caused by quantization in the ReAct loop.' },
+      { title: 'GNN & transformer accelerator SoC', status: 'Jan–Nov 2024 · TSMC 28 nm', description: 'Contributed sparse accelerator RTL for a processing element supporting mixed N:M sparsity.' }
     ]
   },
 
@@ -112,29 +125,54 @@ export const siteContent = {
     headingHtml: 'Where I’ve worked<br>and what I’ve built.',
     items: [
       {
-        year: '2026', company: 'NVIDIA Research', role: 'Ph.D. Research Intern · Accelerators & VLSI', location: 'Santa Clara, CA', mark: 'NV',
-        summary: 'Developed a unique quantization paradigm of runtime adaptive mixed-precision. Enables a model to organically request precision based on its computational needs, rather than a designer imposing it.',
+        year: '2026', dates: 'Oct 2026–Present', company: 'Infravana', role: 'Founding Engineer Intern · Seed-stage startup', location: 'San Francisco, CA', mark: 'IF',
+        summary: 'Building an LLM serving layer across heterogeneous GPUs, TPUs, and other compute infrastructure to improve cost efficiency while meeting latency service-level objectives.',
+        keywords: []
+      },
+      {
+        year: '2026', dates: 'May 2026–Present', company: 'NVIDIA Research', role: 'Ph.D. Research Intern · Accelerators & VLSI', location: 'Santa Clara, CA', mark: 'NV',
+        summary: 'Developed a runtime-adaptive quantization framework that dynamically adjusts weight, activation, and KV cache precision during long-horizon agentic inference. Designed a composable, multi-scale format built on a shared NVFP4 representation and optimized the Tensor Core datapath with a 2-bit quinary format, achieving 2× baseline NVFP4 prefill throughput.',
         keywords: [{ label: 'Mixed precision', papers: ['OuroMamba', 'MicroScopiQ', 'CLAMP-ViT'] }, { label: 'Algorithm–hardware co-design', papers: ['FLOW + FlexCiM', 'Logarithmic Posits'] }]
       },
       {
-        year: '2025', company: 'NVIDIA Research', role: 'Ph.D. Research Intern · Accelerators & VLSI', location: 'Santa Clara, CA', mark: 'NV',
-        summary: 'Developed thought-aware KV-cache compression for reasoning models to reduce memory use while preserving answer quality.',
+        year: '2025', dates: 'May–Aug 2025', company: 'NVIDIA Research', role: 'Ph.D. Research Intern · Accelerators & VLSI', location: 'Santa Clara, CA', mark: 'NV',
+        summary: 'Proposed ThinKV, a thought-adaptive KV-cache compression technique combining selective quantization and token eviction. Reduced KV-cache memory usage by more than 96% with near-lossless accuracy, filed a provisional patent, and led work selected for an ICLR 2026 oral presentation.',
         keywords: [{ label: 'KV-cache compression', papers: ['ThinKV'] }]
       },
       {
-        year: '2024', company: 'Intel Labs', role: 'AI Hardware Research Intern', location: 'Santa Clara, CA', mark: 'IN',
-        summary: 'Explored flexible N:M sparsity and a latch-based digital compute-in-memory.',
+        year: '2024', dates: 'Aug–Dec 2024', company: 'Intel Labs', role: 'AI Hardware Research Intern', location: 'Santa Clara, CA', mark: 'IN',
+        summary: 'Proposed outlier-density-aware N:M sparsity selection and FlexCiM, a digital compute-in-memory architecture supporting flexible structured sparsity. Integrated FlexCiM into Intel NPU-v7, resulting in an ISLPED 2025 Best Paper Award and a patent filing.',
         keywords: [{ label: 'Flexible N:M sparsity', papers: ['FLOW + FlexCiM'] }, { label: 'Compute-in-memory', papers: ['FLOW + FlexCiM'] }]
       },
       {
-        year: '2024', company: 'NVIDIA Corporation', role: 'Architecture Energy Modeling Intern', location: 'Santa Clara, CA', mark: 'NV',
-        summary: 'AI-based modeling of GPU energy to guide efficient architecture exploration.',
+        year: '2024', dates: 'May–Aug 2024', company: 'NVIDIA Corporation', role: 'Architecture Energy Modeling Intern', location: 'Santa Clara, CA', mark: 'NV',
+        summary: 'Developed an AI-based GPU power estimation tool. Used transfer learning from parent chips to derivative architectures to reduce data collection and training effort by 5×.',
         keywords: [{ label: 'Architecture modeling', papers: ['AIrchitect v2', 'OneDSE'] }]
       },
       {
-        year: '2023', company: 'Lemurian Labs', role: 'Hardware Intern', location: 'Menlo Park, CA', mark: 'LL',
-        summary: 'Evaluated tensor dataflow, on-chip networks, and adaptive arithmetic for efficient accelerator architectures.',
+        year: '2023', dates: 'Aug 2023–Present', company: 'Georgia Institute of Technology', role: 'Graduate Research Assistant · Synergy Lab', location: 'Atlanta, GA', mark: 'GT',
+        summary: 'Conducting doctoral research with Prof. Tushar Krishna on co-designing hardware and algorithms for efficient foundation-model computing through adaptable sparsity and quantization.',
+        keywords: [{ label: 'Quantization & sparsity', papers: ['MicroScopiQ', 'FLOW + FlexCiM', 'ThinKV'] }]
+      },
+      {
+        year: '2023', dates: 'Jun–Aug 2023', company: 'Lemurian Labs', role: 'Hardware Intern', location: 'Menlo Park, CA', mark: 'LL',
+        summary: 'Designed and verified a smart on-chip network using SystemVerilog and Python/PyUVM, achieving 35% higher operating frequency and 2.5× better performance. Deployed an adaptive logarithmic datatype in Python and C++ and evaluated mixed-precision BERT and GPT, yielding a 10× speedup over floats.',
         keywords: [{ label: 'On-chip networks', papers: ['MicroScopiQ'] }, {label: 'Adaptive arithmetic', papers: ['Logarithmic Posits'] }]
+      },
+      {
+        year: '2022', dates: 'Aug 2022–Jul 2023', company: 'Samsung Research & Development', role: 'Visual Intelligence Engineer', location: 'Suwon, South Korea', mark: 'SS',
+        summary: 'Co-designed depth perception algorithms and accelerators for XR devices, leading to an ICIP publication, a patent, and a Samsung Best Paper Award nomination. Reduced on-device depth-fusion inference latency by 67% and ToF acquisition latency by 60%.',
+        keywords: []
+      },
+      {
+        year: '2021', dates: 'Jul 2021–Dec 2022', company: 'IIT Bombay', role: 'Research Assistant', location: 'Mumbai, India', mark: 'IB',
+        summary: 'Designed and verified a reconfigurable, programmable, multithreaded 40 Gb/s NIC and MAC architecture in HLS and Verilog for the Ajit processor. Implemented packet generation, forwarding verification, and NIC support libraries in C.',
+        keywords: []
+      },
+      {
+        year: '2021', dates: 'May–Jul 2021', company: 'Samsung Research & Development', role: 'Summer Research Intern', location: 'Bangalore, India & Suwon, South Korea', mark: 'SS',
+        summary: 'Researched memory-efficient deep-learning algorithms and architectures for AR. Remodeled a 3D reconstruction pipeline in Python and C and designed a memory controller with parameter clustering, achieving nearly 2× higher performance.',
+        keywords: []
       }
     ]
   },
@@ -193,7 +231,7 @@ export const siteContent = {
         imageAlt: 'Logarithmic posit format and accelerator diagram', accent: '#9a8d6d'
       },
       {
-        title: 'Polestar', year: 2026, venue: 'ICLR Workshop 2026', category: 'NeurIPS 2026', metaLayout: 'stacked',
+        title: 'Polestar', year: 2026, venue: 'NeurIPS · 2026', category: 'Equal contribution · ICLR Workshop 2026', metaLayout: 'stacked',
         subtitle: 'Polestar: Drift-Aware Cache Calibration and Token Commitment for Efficient Inference of Diffusion LLMs',
         description: 'Polestar uses token-representation drift as one signal for two inference decisions: selectively refresh stale KV-cache positions and commit tokens ready to stop changing. The joint cache-and-decoding policy improves the accuracy–throughput trade-off in diffusion LLMs.',
         url: 'https://openreview.net/forum?id=e3ITaLZ4ct', image: 'images/publications/polestar-paper-figure.png',
@@ -224,7 +262,9 @@ export const siteContent = {
       stampHtml: 'ICLR<br>ORAL'
     },
     items: [
-      { date: 'May 2026', type: 'Career', textHtml: 'Returned to <strong>NVIDIA Research</strong> to continue mixed-precision accelerator research.' },
+      { date: 'Oct 2026', type: 'Career', textHtml: 'Joined <strong>Infravana</strong> as a founding engineer intern, building efficient LLM serving across heterogeneous compute.' },
+      { date: '2026', type: 'Paper', textHtml: '<strong>Polestar</strong> accepted at <strong>NeurIPS 2026</strong>, with equal contribution.' },
+      { date: 'May 2026', type: 'Career', textHtml: 'Returned to <strong>NVIDIA Research</strong> to develop runtime-adaptive quantization for long-horizon agentic inference.' },
       { date: '2026', type: 'Honor', textHtml: 'Named an <strong>MLCommons Rising Star</strong> in machine learning and systems research.' },
       { date: '2026', type: 'Service', textHtml: 'Served as submission co-chair for <a href="https://microarch.org/micro59/" target="_blank" rel="noopener noreferrer"><strong>MICRO 2026</strong></a>.' },
       { date: 'Mar 2026', type: 'Milestone', textHtml: 'Defended Ph.D. proposal on adaptable sparsity and quantization for efficient foundation-model computing.' },
@@ -253,6 +293,7 @@ export const siteContent = {
       { year: '2023', title: 'Best Paper Nominee', description: 'Top 5% of Samsung advanced research' },
       { year: '2022', title: 'Best Thesis', description: 'Electrical Engineering, VJTI' },
       { year: '2022', title: 'Samsung Spot Award', description: 'AR/VR algorithms for Galaxy devices' },
+      { year: '2022', title: 'Professional SW Competency', description: 'Global Samsung Aptitude Test' },
       { year: '2022', title: 'Electrothon', description: 'Second place' },
       { year: '2021', title: 'Vision Beyond Limits', description: 'Second place' },
       { year: '2021', title: 'E-Yantra Robotics', description: 'Second place internationally' }
